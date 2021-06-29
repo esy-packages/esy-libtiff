@@ -1,0 +1,37 @@
+{
+  "checksum": "389eabf857b999fc480b59ed594bcab7",
+  "root": "esy-libtiff@link-dev:./package.json",
+  "node": {
+    "esy-zlib@github:eWert-Online/esy-zlib#9b0394f07551d9fde386e28a6ff269984b63ffcf@d41d8cd9": {
+      "id":
+        "esy-zlib@github:eWert-Online/esy-zlib#9b0394f07551d9fde386e28a6ff269984b63ffcf@d41d8cd9",
+      "name": "esy-zlib",
+      "version":
+        "github:eWert-Online/esy-zlib#9b0394f07551d9fde386e28a6ff269984b63ffcf",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:eWert-Online/esy-zlib#9b0394f07551d9fde386e28a6ff269984b63ffcf"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    "esy-libtiff@link-dev:./package.json": {
+      "id": "esy-libtiff@link-dev:./package.json",
+      "name": "esy-libtiff",
+      "version": "link-dev:./package.json",
+      "source": {
+        "type": "link-dev",
+        "path": ".",
+        "manifest": "package.json"
+      },
+      "overrides": [],
+      "dependencies": [
+        "esy-zlib@github:eWert-Online/esy-zlib#9b0394f07551d9fde386e28a6ff269984b63ffcf@d41d8cd9"
+      ],
+      "devDependencies": []
+    }
+  }
+}

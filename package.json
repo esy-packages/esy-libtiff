@@ -1,0 +1,41 @@
+{
+  "name": "esy-libtiff",
+  "version": "4.3.0",
+  "description": "libtiff packaged for esy",
+  "esy": {
+    "buildsInSource": true,
+    "exportedEnv": {
+      "CFLAGS": {
+        "scope": "global",
+        "val": "-I#{self.install / 'include'} $CFLAGS"
+      },
+      "LDFLAGS": {
+        "scope": "global",
+        "val": "-L#{self.lib} $LDFLAGS -ltiff"
+      },
+      "PKG_CONFIG_PATH": {
+        "scope": "global",
+        "val": "#{self.lib / 'pkgconfig' : $PKG_CONFIG_PATH }"
+      },
+      "TIFF_INCLUDE_PATH": {
+        "val": "#{self.install / 'include' }",
+        "scope": "global"
+      },
+      "TIFF_LIB_PATH": {
+        "val": "#{self.lib}",
+        "scope": "global"
+      }
+    },
+    "build": [
+      "chmod 755 ./configure",
+      "./configure --with-pic --disable-dependency-tracking --disable-jpeg --disable-old-jpeg --disable-lzma --disable-webp --disable-zstd --without-x --prefix=#{self.install} #{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+      "make -j4"
+    ],
+    "install": [
+      "make install"
+    ]
+  },
+  "dependencies": {
+    "esy-zlib": "eWert-Online/esy-zlib#9b0394f07551d9fde386e28a6ff269984b63ffcf"
+  }
+}
