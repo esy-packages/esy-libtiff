@@ -28,7 +28,7 @@
     },
     "build": [
       "chmod 755 ./configure",
-      "./configure --with-pic --disable-dependency-tracking --disable-jpeg --disable-old-jpeg --disable-lzma --disable-webp --disable-zstd --without-x --prefix=#{self.install} #{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+      "./configure --with-pic --disable-dependency-tracking --disable-jpeg --disable-old-jpeg --disable-lzma --disable-webp --disable-zstd --disable-jbig --without-x --prefix=#{self.install} #{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
       "make -j4"
     ],
     "install": [
